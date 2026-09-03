@@ -1,3 +1,5 @@
+SET SERVEROUTPUT ON;
+
 -- Exercício 3 — Identificação de números primos
 -- Permite que as mensagens do DBMS_OUTPUT apareçam na tela
 
@@ -93,4 +95,5 @@ BEGIN
     );
 
 END;
+/
 

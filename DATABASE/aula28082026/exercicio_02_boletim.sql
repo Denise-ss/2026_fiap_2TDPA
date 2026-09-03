@@ -1,3 +1,5 @@
+SET SERVEROUTPUT ON;
+
 -- Exercício 2 — Boletim da turma com classificação de notas
 
 DECLARE
@@ -87,3 +89,4 @@ BEGIN
 
 -- Termina o bloco
 END;
+/
