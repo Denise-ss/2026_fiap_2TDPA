@@ -1,6 +1,5 @@
 SET SERVEROUTPUT ON;
 
-
 /*
 Exercicio_03_Financiamento de veiculo em 10 parcelas
 
@@ -13,7 +12,7 @@ da compra de um veiculo nas seguintes condicoes:
 - exiba o valor informado do veiculo;
 - calcule o valor total do veiculo com os juros;
 - informe o valor de cada parcela;
-- informe o valor total do veiculo financiado.
+- informe o valor total do 5000veiculo financiado.
 */
 
 DECLARE

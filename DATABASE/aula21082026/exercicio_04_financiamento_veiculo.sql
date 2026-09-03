@@ -1,4 +1,3 @@
-
 SET SERVEROUTPUT ON;
 /*
 Exercicio 4 - Financiamento de veiculo
