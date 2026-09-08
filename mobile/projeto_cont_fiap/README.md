@@ -48,7 +48,18 @@ O sistema também impede:
 
 # 📚 AULA DIA 08/09/2026
 
-## 1️⃣ INCLUSÃO DE IMAGEM: ÍCONE DO ANDROID
+Nesta aula foram realizadas configurações importantes no projeto Flutter:
+
+1. Inclusão de imagem e ícone do Android;
+2. Configuração do `flutter_launcher_icons`;
+3. Inclusão do Google Fonts;
+4. Configuração do Hot Reload automático;
+5. Configuração do Auto Save;
+6. Execução do projeto pelo VS Code.
+
+---
+
+# 1️⃣ INCLUSÃO DE IMAGEM: ÍCONE DO ANDROID
 
 Acesse o projeto que estamos trabalhando e entre no arquivo:
 
@@ -56,7 +67,7 @@ Acesse o projeto que estamos trabalhando e entre no arquivo:
 pubspec.yaml
 ```
 
-Em `dev_dependencies`, incluímos o pacote de ícones:
+Em `dev_dependencies`, adicionamos:
 
 ```yaml
 dev_dependencies:
@@ -66,22 +77,33 @@ dev_dependencies:
   flutter_launcher_icons: "^0.14.4"
 ```
 
-> O `flutter_launcher_icons` é o pacote utilizado para gerar os ícones do aplicativo.
+O:
 
-### 📖 Documentação
+```yaml
+flutter_launcher_icons: "^0.14.4"
+```
 
-Documentação utilizada em aula:
+é a inclusão do pacote de ícones.
+
+---
+
+## 📖 DOCUMENTAÇÃO
+
+No final do código precisamos colocar o código que está na documentação:
 
 https://pub.dev/packages/flutter_launcher_icons
 
-No final do código precisamos colocar a configuração que está na documentação:
+A configuração utilizada ficou semelhante a:
 
 ```yaml
 flutter_launcher_icons:
+
   android: true
+
   ios: true
 
   adaptive_icon_background: "#000000"
+
   adaptive_icon_foreground: "assets/icons/fiap_logo.jpg"
 
   image_path: "assets/icons/fiap_icon.jpg"
@@ -104,75 +126,91 @@ flutter_launcher_icons:
     image_path: "path/to/image.png"
 ```
 
-### 📝 Anotações importantes
+---
+
+## 📝 ENTENDENDO AS CONFIGURAÇÕES DO ÍCONE
+
+### Android
 
 ```yaml
 android: true
 ```
 
-Serve para gerar o ícone do app para **Android**.
+Serve para gerar o ícone do aplicativo para **Android**.
 
-> **Importante:** na documentação é necessário alterar essa opção para `true`.
+> ⚠️ **IMPORTANTE:** na documentação é necessário alterar a opção para `true`.
 
 ---
+
+### iOS
 
 ```yaml
 ios: true
 ```
 
-Serve para gerar o ícone do app para **iOS**.
+Serve para gerar o ícone do aplicativo para **iOS**.
 
 ---
+
+### Cor de fundo do ícone
 
 ```yaml
 adaptive_icon_background: "#000000"
 ```
 
-Define a **cor de fundo do ícone adaptativo do Android**.
+Define a cor de fundo do ícone adaptativo do Android.
 
-Neste projeto utilizamos:
+Neste projeto:
 
 ```text
-#000000 = preto
+#000000
 ```
 
+representa a cor preta.
+
 ---
+
+### Imagem principal do ícone adaptativo
 
 ```yaml
 adaptive_icon_foreground: "assets/icons/fiap_logo.jpg"
 ```
 
-Caminho da imagem que será utilizada para gerar o **ícone adaptativo do Android**.
+É o caminho da imagem que será utilizada para gerar o ícone adaptativo do Android.
 
-Essa imagem preenche o campo do ícone.
+Essa imagem é utilizada para preencher o campo do ícone.
 
 ---
+
+### Caminho do ícone
 
 ```yaml
 image_path: "assets/icons/fiap_icon.jpg"
 ```
 
-Caminho da imagem utilizada para gerar o ícone do aplicativo.
+É o caminho da imagem que será utilizada para gerar o ícone do aplicativo.
 
 ---
+
+### SDK mínimo do Android
 
 ```yaml
 min_sdk_android: 21
 ```
 
-Define a versão mínima do SDK Android.
+Configuração relacionada à versão mínima do SDK Android.
 
-Anotação da aula:
+Anotação realizada durante a aula:
 
 ```text
 Android min SDK
 mínimo: 16
-default utilizado: 21
+default: 21
 ```
 
 ---
 
-### 🌐 WEB
+## 🌐 CONFIGURAÇÃO WEB
 
 ```yaml
 web:
@@ -182,11 +220,11 @@ web:
   theme_color: "#hexcode"
 ```
 
-> **Não precisamos mexer no momento.**
+> **NÃO PRECISAMOS MEXER NO MOMENTO.**
 
 ---
 
-### 🪟 WINDOWS
+## 🪟 CONFIGURAÇÃO WINDOWS
 
 ```yaml
 windows:
@@ -195,9 +233,9 @@ windows:
   icon_size: 48
 ```
 
-> **Não precisamos mexer no momento.**
+> **NÃO PRECISAMOS MEXER NO MOMENTO.**
 
-O tamanho do ícone pode variar entre:
+Anotação sobre o tamanho:
 
 ```text
 mínimo: 48
@@ -207,7 +245,7 @@ default: 48
 
 ---
 
-### 🍎 MACOS
+## 🍎 CONFIGURAÇÃO MACOS
 
 ```yaml
 macos:
@@ -215,11 +253,11 @@ macos:
   image_path: "path/to/image.png"
 ```
 
-> **Não precisamos mexer no momento.**
+> **NÃO PRECISAMOS MEXER NO MOMENTO.**
 
 ---
 
-## ▶️ EXECUTAR O PACOTE
+# ▶️ EXECUTAR O PACOTE
 
 Após configurar tudo, basta executar o pacote.
 
@@ -235,7 +273,7 @@ Depois:
 dart run flutter_launcher_icons
 ```
 
-Esse comando serve para rodar as dependências relacionadas à geração dos ícones.
+Esse comando serve para rodar as dependências/configuração do ícone.
 
 Depois:
 
@@ -243,13 +281,47 @@ Depois:
 flutter run
 ```
 
-Para buildar as informações e atualizar/executar o projeto.
+Para buildar as informações, atualizar e executar o projeto.
 
-> ⚠️ **IMPORTANTE:** sempre que mudar alguma coisa nas dependências, lembrar de executar:
+> ⚠️ **IMPORTANTE: SEMPRE QUE MUDAR ALGUMA COISA NAS DEPENDÊNCIAS, RODAR:**
 
 ```bash
 flutter pub get
 ```
+
+---
+
+## 💡 ENTENDENDO MELHOR O `pubspec.yaml`
+
+O arquivo:
+
+```text
+pubspec.yaml
+```
+
+é um dos arquivos importantes do projeto Flutter.
+
+Nele podemos configurar informações como:
+
+```text
+DEPENDÊNCIAS
+      ↓
+PACOTES
+      ↓
+ASSETS / IMAGENS
+      ↓
+FONTES
+      ↓
+CONFIGURAÇÕES DO PROJETO
+```
+
+Quando adicionamos ou modificamos dependências, utilizamos:
+
+```bash
+flutter pub get
+```
+
+para buscar/atualizar as dependências utilizadas pelo projeto.
 
 ---
 
@@ -259,7 +331,7 @@ Acesse a documentação:
 
 https://pub.dev/packages/google_fonts/install
 
-No seu terminal (CMD), acesse a **pasta raiz do projeto** e rode:
+No seu terminal **CMD**, acesse a pasta raiz do projeto e rode:
 
 ```bash
 flutter pub add google_fonts
@@ -273,7 +345,7 @@ flutter pub get
 
 ---
 
-## 🔎 CONFERINDO A INSTALAÇÃO
+## 🔎 CONFERINDO NO `pubspec.yaml`
 
 Para conferir, acesse o arquivo:
 
@@ -291,7 +363,7 @@ dependencies:
   google_fonts: ^8.2.1
 ```
 
-> A versão pode variar dependendo da versão instalada no projeto.
+> A versão do pacote pode variar dependendo da versão instalada no projeto.
 
 ---
 
@@ -303,7 +375,7 @@ No arquivo:
 lib/main.dart
 ```
 
-No topo do arquivo ficará:
+no topo do arquivo ficará:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -318,36 +390,59 @@ import 'package:google_fonts/google_fonts.dart';
 
 traz a biblioteca do **Google Fonts** para dentro do arquivo Dart.
 
+---
+
+## 🔤 UTILIZANDO O GOOGLE FONTS
+
 No nosso projeto utilizamos:
 
 ```dart
-GoogleFonts.roboto(
-  color: Colors.white,
-  fontSize: 26,
+Text(
+  "CONTADOR LAB FIAP",
+  style: GoogleFonts.roboto(
+    color: Colors.white,
+    fontSize: 26,
+  ),
 )
 ```
 
-Ou seja:
+Podemos entender:
 
 ```text
 GoogleFonts
      ↓
 roboto
      ↓
-Fonte Roboto
+utiliza a fonte Roboto
 ```
+
+Também configuramos:
+
+```dart
+color: Colors.white
+```
+
+para deixar a fonte branca.
+
+E:
+
+```dart
+fontSize: 26
+```
+
+para definir o tamanho da fonte.
 
 ---
 
 # 3️⃣ INCLUSÃO DO HOT RELOAD AUTOMÁTICO
 
-No VS Code acesse:
+No VS Code, acesse:
 
 ```text
 Configurações
 ```
 
-Digite:
+Depois digite:
 
 ```text
 hot reload
@@ -359,25 +454,29 @@ Aparecerá a opção:
 Dart: Flutter Hot Reload On Save
 ```
 
-Coloque:
+Coloque a opção:
 
 ```text
 all
 ```
 
-Ou seja, toda vez que o arquivo for salvo, o VS Code envia uma solicitação de **Hot Reload** para o aplicativo Flutter em execução.
+Ou seja, toda vez que o arquivo é salvo ele já faz o **Hot Reload** na sequência.
 
 ---
 
-## 💾 AUTO SAVE
+# 💾 CONFIGURAÇÃO DO AUTO SAVE
 
-Também configuramos o salvamento automático.
+Também configuramos o salvamento automático do VS Code.
 
-No VS Code:
+Acesse:
 
 ```text
 Configurações
-      ↓
+```
+
+Digite:
+
+```text
 Auto Save
 ```
 
@@ -387,31 +486,45 @@ Configure:
 Files: Auto Save → afterDelay
 ```
 
-E:
+Depois:
 
 ```text
 Files: Auto Save Delay → 500
 ```
 
-Dessa forma:
+Isso faz com que o VS Code salve automaticamente depois de aproximadamente **500 milissegundos**.
+
+---
+
+## 🔥 AUTO SAVE + HOT RELOAD
+
+Agora as duas configurações trabalham juntas:
 
 ```text
 ALTERO O CÓDIGO
       ↓
 AUTO SAVE
       ↓
-ARQUIVO É SALVO
+VS CODE SALVA O ARQUIVO
       ↓
 HOT RELOAD
       ↓
 APLICATIVO É ATUALIZADO
 ```
 
+Assim não precisamos ficar utilizando:
+
+```text
+CTRL + S
+```
+
+toda vez que alteramos o código.
+
 ---
 
-## ▶️ EXECUTAR O PROJETO PELO VS CODE
+# ▶️ STARTAR O APLICATIVO/SERVIDOR PELO VS CODE
 
-Agora para iniciar o aplicativo/servidor de outra forma, dentro do VS Code:
+Agora, para startar o aplicativo/servidor de outra forma, dentro do VS Code:
 
 Na parte superior do VS Code, clique em:
 
@@ -419,7 +532,7 @@ Na parte superior do VS Code, clique em:
 Executar
 ```
 
-Depois:
+Depois clique em:
 
 ```text
 Executar sem Depuração
@@ -431,29 +544,43 @@ Atalho:
 CTRL + F5
 ```
 
-Ele irá iniciar o projeto.
-
-Também podemos executar pelo terminal utilizando:
+Ele vai rodar o projeto como se tivéssemos digitado no terminal:
 
 ```bash
 flutter run
 ```
 
-No VS Code aparecerá uma barra com vários comandos que podemos clicar para controlar a execução do projeto.
+No VS Code vai aparecer uma barra com vários comandos que podemos clicar para executar/controlar o projeto.
 
-Com o **Auto Save + Hot Reload** configurados, as alterações comuns realizadas no código são atualizadas automaticamente durante a execução.
+E agora, como configuramos o:
+
+```text
+Hot Reload On Save → all
+```
+
+junto com o:
+
+```text
+Auto Save → afterDelay
+```
+
+o Hot Reload passa a acontecer automaticamente quando o arquivo é salvo.
 
 ---
 
 # 🧠 ENTENDENDO O CÓDIGO DO PROJETO
 
-O arquivo principal utilizado no projeto é:
+Agora algumas anotações importantes sobre o código desenvolvido no arquivo:
 
 ```text
 lib/main.dart
 ```
 
-## `main()`
+---
+
+# 1️⃣ FUNÇÃO `main()`
+
+O nosso programa começa aqui:
 
 ```dart
 void main() {
@@ -461,9 +588,15 @@ void main() {
 }
 ```
 
-É o ponto inicial do programa.
+Todo programa Dart possui um ponto inicial.
 
-Podemos entender assim:
+Neste caso:
+
+```text
+main()
+```
+
+Podemos visualizar:
 
 ```text
 INICIA O PROGRAMA
@@ -474,14 +607,38 @@ INICIA O PROGRAMA
        ↓
      MyApp()
        ↓
-APLICATIVO INICIADO
+APLICATIVO É INICIADO
 ```
 
 ---
 
-## `StatelessWidget`
+# 2️⃣ `runApp()`
 
-No projeto temos:
+Temos:
+
+```dart
+runApp(MyApp());
+```
+
+O:
+
+```dart
+runApp()
+```
+
+é responsável por iniciar a interface Flutter.
+
+Estamos dizendo para o Flutter iniciar:
+
+```dart
+MyApp()
+```
+
+---
+
+# 3️⃣ `StatelessWidget`
+
+Temos:
 
 ```dart
 class MyApp extends StatelessWidget
@@ -489,17 +646,74 @@ class MyApp extends StatelessWidget
 
 O `StatelessWidget` é utilizado para um Widget que não precisa ter seu próprio estado alterado durante a execução.
 
+No nosso projeto, `MyApp` é responsável principalmente pela estrutura inicial do aplicativo.
+
 ---
 
-## `StatefulWidget`
+# 4️⃣ `MaterialApp`
 
-A `HomePage` foi criada como:
+Dentro de `MyApp` temos:
+
+```dart
+return MaterialApp(
+  debugShowCheckedModeBanner: false,
+  home: HomePage(),
+);
+```
+
+O `MaterialApp` é utilizado para configurar a aplicação seguindo os componentes e padrões do Material Design.
+
+---
+
+## 🏷️ REMOVENDO A FAIXA DEBUG
+
+Utilizamos:
+
+```dart
+debugShowCheckedModeBanner: false
+```
+
+Isso remove a faixa:
+
+```text
+DEBUG
+```
+
+que aparece no canto da aplicação durante o desenvolvimento.
+
+---
+
+# 5️⃣ `HomePage`
+
+Temos:
+
+```dart
+home: HomePage()
+```
+
+Estamos dizendo que a tela inicial do aplicativo será:
+
+```text
+HomePage
+```
+
+---
+
+# 6️⃣ `StatefulWidget`
+
+Nossa `HomePage` foi criada assim:
 
 ```dart
 class HomePage extends StatefulWidget
 ```
 
-Utilizamos `StatefulWidget` porque existem informações na tela que **mudam durante a execução**.
+Utilizamos:
+
+```text
+StatefulWidget
+```
+
+porque nossa tela possui informações que **mudam durante a execução**.
 
 No nosso projeto, quem muda é o:
 
@@ -507,17 +721,53 @@ No nosso projeto, quem muda é o:
 CONTADOR
 ```
 
+Toda vez que uma pessoa entra ou sai, o valor precisa ser atualizado na tela.
+
 ---
 
-## 🔢 Variável `count`
+# 7️⃣ `State`
+
+Temos:
+
+```dart
+State<HomePage> createState() => _HomePageState();
+```
+
+E depois:
+
+```dart
+class _HomePageState extends State<HomePage>
+```
+
+O `State` é onde ficam os dados e comportamentos que podem mudar durante a execução da `HomePage`.
+
+No nosso caso, dentro dele temos:
+
+- o contador;
+- a função de incrementar;
+- a função de decrementar;
+- a verificação se está vazio;
+- a verificação se está cheio.
+
+---
+
+# 8️⃣ VARIÁVEL `count`
+
+Criamos:
 
 ```dart
 int count = 0;
 ```
 
-A variável `count` armazena a quantidade de pessoas dentro do laboratório.
+Essa variável armazena a quantidade de pessoas dentro do laboratório.
 
-`int` representa um **número inteiro**.
+O:
+
+```text
+int
+```
+
+representa números inteiros.
 
 Começamos com:
 
@@ -529,7 +779,9 @@ porque inicialmente o laboratório está vazio.
 
 ---
 
-## ➕ `increment()`
+# 9️⃣ FUNÇÃO `increment()`
+
+Criamos:
 
 ```dart
 void increment() {
@@ -539,13 +791,15 @@ void increment() {
 }
 ```
 
-Essa função é executada quando alguém **entra**.
+Essa função é chamada quando alguém entra.
+
+O:
 
 ```dart
 count++;
 ```
 
-é equivalente a:
+significa:
 
 ```text
 count = count + 1
@@ -565,7 +819,9 @@ ENTROU UMA PESSOA
 
 ---
 
-## ➖ `decrement()`
+# 🔟 FUNÇÃO `decrement()`
+
+Criamos:
 
 ```dart
 void decrement() {
@@ -575,41 +831,65 @@ void decrement() {
 }
 ```
 
-Essa função é executada quando alguém **sai**.
+Essa função é chamada quando alguém sai.
+
+O:
 
 ```dart
 count--;
 ```
 
-é equivalente a:
+significa:
 
 ```text
 count = count - 1
 ```
 
----
-
-## 🔄 `setState()`
-
-O `setState()` informa ao Flutter que uma informação do estado foi alterada e que a interface precisa ser atualizada.
+Exemplo:
 
 ```text
 count = 5
-    ↓
-increment()
-    ↓
-count = 6
-    ↓
-setState()
-    ↓
-TELA ATUALIZA
-    ↓
-MOSTRA 6
+
+SAIU UMA PESSOA
+       ↓
+     5 - 1
+       ↓
+   count = 4
 ```
 
 ---
 
-## 🚫 Impedindo números negativos
+# 🔄 `setState()`
+
+Nas duas funções utilizamos:
+
+```dart
+setState(() {
+```
+
+O `setState()` é muito importante neste projeto.
+
+Ele informa ao Flutter que uma informação do estado mudou e que a interface precisa ser atualizada.
+
+Exemplo:
+
+```text
+count = 5
+     ↓
+increment()
+     ↓
+count = 6
+     ↓
+setState()
+     ↓
+FLUTTER ATUALIZA A INTERFACE
+     ↓
+MOSTRA 6 NA TELA
+```
+
+---
+
+# 🚫 IMPEDINDO O CONTADOR DE FICAR NEGATIVO
 
 Criamos:
 
@@ -617,17 +897,35 @@ Criamos:
 bool get isEmpty => count == 0;
 ```
 
-`bool` pode assumir:
+O tipo:
+
+```text
+bool
+```
+
+trabalha com dois valores:
 
 ```text
 true
 false
 ```
 
-Estamos verificando:
+Estamos perguntando:
 
 ```text
 count é igual a 0?
+```
+
+Se sim:
+
+```text
+isEmpty = true
+```
+
+Se não:
+
+```text
+isEmpty = false
 ```
 
 Depois utilizamos:
@@ -636,13 +934,13 @@ Depois utilizamos:
 onPressed: isEmpty ? null : decrement
 ```
 
-Se:
+Quando:
 
 ```text
 count = 0
 ```
 
-então:
+temos:
 
 ```text
 isEmpty = true
@@ -652,11 +950,18 @@ onPressed = null
 BOTÃO "SAIU" DESABILITADO
 ```
 
-Isso impede que o contador fique negativo.
+Isso impede que o contador fique:
+
+```text
+-1
+-2
+-3
+...
+```
 
 ---
 
-## 🚫 Impedindo mais de 25 pessoas
+# 🚫 IMPEDINDO MAIS DE 25 PESSOAS
 
 Criamos:
 
@@ -664,35 +969,41 @@ Criamos:
 bool get isFull => count == 25;
 ```
 
-Estamos verificando se o contador chegou à capacidade máxima.
+Estamos verificando:
 
-Depois:
+```text
+count chegou em 25?
+```
+
+Quando chegar:
+
+```text
+isFull = true
+```
+
+Depois utilizamos:
 
 ```dart
 onPressed: isFull ? null : increment
 ```
 
-Quando:
+Portanto:
 
 ```text
 count = 25
-```
-
-temos:
-
-```text
+     ↓
 isFull = true
-      ↓
+     ↓
 BOTÃO "ENTROU" DESABILITADO
 ```
 
-Assim o contador não ultrapassa `25`.
+Isso impede que o laboratório ultrapasse a capacidade máxima de **25 pessoas**.
 
 ---
 
-## ❓ Operador ternário
+# ❓ OPERADOR TERNÁRIO
 
-No projeto utilizamos:
+No projeto temos:
 
 ```dart
 isFull ? "Lab lotado" : "Pode entrar"
@@ -706,27 +1017,45 @@ O:
 
 é chamado de **operador ternário**.
 
-Podemos interpretar:
+Ele é utilizado para fazer uma decisão de maneira mais curta.
+
+Podemos ler:
 
 ```text
-LAB ESTÁ LOTADO?
-      ↓
-   SIM → "Lab lotado"
-      ↓
-   NÃO → "Pode entrar"
+isFull é verdadeiro?
+        ↓
+       SIM
+        ↓
+   "Lab lotado"
+
+        OU
+
+       NÃO
+        ↓
+   "Pode entrar"
 ```
 
-É uma forma reduzida de uma decisão do tipo `if/else`.
+Seria semelhante a:
+
+```dart
+if (isFull) {
+  // Lab lotado
+} else {
+  // Pode entrar
+}
+```
 
 ---
 
-## 🏗️ `Scaffold`
+# 🏗️ `Scaffold`
+
+Temos:
 
 ```dart
 return Scaffold(
 ```
 
-O `Scaffold` fornece a estrutura básica da tela.
+O `Scaffold` fornece uma estrutura básica para a tela do aplicativo.
 
 Podemos visualizar:
 
@@ -740,7 +1069,9 @@ Scaffold
 
 ---
 
-## 🎀 `AppBar`
+# 🎀 `AppBar`
+
+No projeto temos:
 
 ```dart
 appBar: AppBar(
@@ -748,34 +1079,42 @@ appBar: AppBar(
 
 É a barra superior do aplicativo.
 
-No projeto ela mostra:
+Nela colocamos:
 
 ```text
 CONTADOR LAB FIAP
 ```
 
-E utilizamos:
+Também configuramos:
 
 ```dart
 backgroundColor: Colors.pink
 ```
 
-para definir o fundo rosa.
+para deixar o fundo rosa.
 
 ---
 
-## 🖼️ Imagem de fundo
+# 🖼️ IMAGEM DE FUNDO
 
-Utilizamos:
+No `Container` utilizamos:
 
 ```dart
-DecorationImage(
-  image: AssetImage("assets/img/fiap_bg.png"),
-  fit: BoxFit.cover,
-)
+decoration: BoxDecoration(
+  image: DecorationImage(
+    image: AssetImage("assets/img/fiap_bg.png"),
+    fit: BoxFit.cover,
+  ),
+),
 ```
 
-O `AssetImage()` permite carregar uma imagem armazenada dentro do projeto.
+O:
+
+```dart
+AssetImage()
+```
+
+permite utilizar uma imagem que está armazenada dentro do próprio projeto.
 
 Neste caso:
 
@@ -787,19 +1126,27 @@ img
 fiap_bg.png
 ```
 
----
-
-## 📐 `Column`
-
-A:
+O:
 
 ```dart
-Column()
+fit: BoxFit.cover
 ```
 
-organiza os elementos **verticalmente**.
+faz a imagem cobrir o espaço disponível.
 
-Exemplo:
+---
+
+# 📐 `Column`
+
+Temos:
+
+```dart
+Column(
+```
+
+A `Column` organiza os elementos na **vertical**.
+
+No nosso projeto podemos visualizar:
 
 ```text
 Pode entrar
@@ -811,15 +1158,15 @@ Saiu    Entrou
 
 ---
 
-## ↔️ `Row`
+# ↔️ `Row`
 
-A:
+Temos:
 
 ```dart
-Row()
+Row(
 ```
 
-organiza os elementos **horizontalmente**.
+A `Row` organiza os elementos na **horizontal**.
 
 Por isso os botões aparecem lado a lado:
 
@@ -829,7 +1176,21 @@ Por isso os botões aparecem lado a lado:
 
 ---
 
-## 🔘 `TextButton`
+# 🎯 `mainAxisAlignment`
+
+Utilizamos:
+
+```dart
+mainAxisAlignment: MainAxisAlignment.center
+```
+
+Essa configuração é utilizada para centralizar os elementos no eixo principal do Widget.
+
+No projeto ela foi utilizada para ajudar no posicionamento dos componentes na tela.
+
+---
+
+# 🔘 `TextButton`
 
 Os botões foram criados utilizando:
 
@@ -837,7 +1198,19 @@ Os botões foram criados utilizando:
 TextButton()
 ```
 
-Temos:
+Temos dois botões:
+
+```text
+SAIU
+```
+
+e:
+
+```text
+ENTROU
+```
+
+Cada botão chama uma função diferente:
 
 ```text
 SAIU
@@ -855,9 +1228,63 @@ increment()
 
 ---
 
-# 🔄 FLUXO COMPLETO DO CONTADOR
+# 🎨 ESTILO DOS BOTÕES
 
-Quando clicamos em **Entrou**:
+Utilizamos:
+
+```dart
+TextButton.styleFrom(
+```
+
+para configurar o estilo dos botões.
+
+Exemplo:
+
+```dart
+backgroundColor: Colors.white
+```
+
+define a cor de fundo.
+
+Também utilizamos:
+
+```dart
+fixedSize: Size(100, 20)
+```
+
+para definir um tamanho para o botão.
+
+---
+
+# 🌫️ BOTÃO DESABILITADO
+
+Quando o botão não pode ser utilizado, usamos:
+
+```dart
+Colors.white.withAlpha(90)
+```
+
+Isso altera a transparência da cor e ajuda visualmente a indicar que o botão está desabilitado.
+
+No botão **Saiu**:
+
+```dart
+backgroundColor:
+    isEmpty ? Colors.white.withAlpha(90) : Colors.white
+```
+
+No botão **Entrou**:
+
+```dart
+backgroundColor:
+    isFull ? Colors.white.withAlpha(90) : Colors.white
+```
+
+---
+
+# 🔄 FLUXO COMPLETO DO NOSSO CONTADOR
+
+## Quando alguém entra
 
 ```text
 USUÁRIO CLICA EM "ENTROU"
@@ -875,7 +1302,9 @@ FLUTTER ATUALIZA A INTERFACE
 NOVO NÚMERO APARECE NA TELA
 ```
 
-Quando clicamos em **Saiu**:
+---
+
+## Quando alguém sai
 
 ```text
 USUÁRIO CLICA EM "SAIU"
@@ -900,23 +1329,32 @@ NOVO NÚMERO APARECE NA TELA
 | Comando / Conceito | Para que serve |
 |---|---|
 | `main()` | Ponto inicial do programa |
-| `runApp()` | Inicia o aplicativo Flutter |
+| `runApp()` | Inicia a aplicação Flutter |
 | `StatelessWidget` | Widget sem estado mutável próprio |
-| `StatefulWidget` | Widget que pode possuir estado que muda |
-| `State` | Armazena o estado associado ao StatefulWidget |
+| `StatefulWidget` | Widget utilizado quando existem informações que podem mudar |
+| `State` | Guarda o estado associado ao StatefulWidget |
 | `setState()` | Informa ao Flutter que o estado mudou |
-| `int` | Representa números inteiros |
+| `int` | Tipo utilizado para números inteiros |
 | `bool` | Trabalha com `true` ou `false` |
-| `count++` | Soma 1 |
-| `count--` | Subtrai 1 |
+| `count++` | Soma 1 ao contador |
+| `count--` | Subtrai 1 do contador |
+| `isEmpty` | Verifica se o contador está em 0 |
+| `isFull` | Verifica se o contador chegou em 25 |
+| `MaterialApp` | Configuração principal da aplicação Material |
 | `Scaffold` | Estrutura básica da tela |
 | `AppBar` | Barra superior |
+| `Container` | Widget utilizado para agrupar e estilizar elementos |
 | `Column` | Organiza elementos verticalmente |
 | `Row` | Organiza elementos horizontalmente |
+| `Text` | Exibe textos |
 | `TextButton` | Cria botão baseado em texto |
 | `AssetImage` | Carrega uma imagem dos assets |
-| `GoogleFonts` | Permite utilizar as fontes do pacote Google Fonts |
+| `BoxDecoration` | Permite configurar decoração de um Container |
+| `DecorationImage` | Permite utilizar imagem na decoração |
+| `BoxFit.cover` | Faz a imagem cobrir o espaço disponível |
+| `GoogleFonts` | Permite utilizar fontes do pacote Google Fonts |
 | `? :` | Operador ternário |
+| `null` no `onPressed` | Desabilita o botão |
 
 ---
 
@@ -938,6 +1376,8 @@ projeto_cont_fiap/
 │
 ├── android/
 ├── ios/
+├── linux/
+├── macos/
 ├── web/
 ├── windows/
 │
@@ -948,42 +1388,90 @@ projeto_cont_fiap/
 
 ---
 
-# 💻 COMANDOS IMPORTANTES
+# 💻 COMANDOS IMPORTANTES DA AULA
 
-Atualizar/baixar dependências:
+## Atualizar/baixar dependências
 
 ```bash
 flutter pub get
 ```
 
-Adicionar Google Fonts:
+## Adicionar Google Fonts
 
 ```bash
 flutter pub add google_fonts
 ```
 
-Gerar os ícones:
+## Gerar os ícones
 
 ```bash
 dart run flutter_launcher_icons
 ```
 
-Ver dispositivos disponíveis:
+## Ver dispositivos disponíveis
 
 ```bash
 flutter devices
 ```
 
-Executar o projeto:
+## Executar o projeto
 
 ```bash
 flutter run
 ```
 
-Executar pelo VS Code sem depuração:
+## Executar pelo VS Code sem depuração
 
 ```text
 CTRL + F5
+```
+
+---
+
+# 📝 LEMBRETES IMPORTANTES
+
+### Alterou dependências?
+
+Execute:
+
+```bash
+flutter pub get
+```
+
+### Quer gerar novamente os ícones?
+
+Execute:
+
+```bash
+dart run flutter_launcher_icons
+```
+
+### Quer executar o projeto pelo terminal?
+
+Execute:
+
+```bash
+flutter run
+```
+
+### Quer executar pelo VS Code?
+
+```text
+Executar
+   ↓
+Executar sem Depuração
+   ↓
+CTRL + F5
+```
+
+### Quer atualização automática?
+
+Configure:
+
+```text
+Auto Save → afterDelay
+Auto Save Delay → 500
+Flutter Hot Reload On Save → all
 ```
 
 ---
@@ -993,3 +1481,5 @@ CTRL + F5
 Este repositório também será utilizado como material de revisão das aulas de **Mobile Application Development**, registrando não somente o código desenvolvido, mas também os conceitos aprendidos durante a construção do projeto.
 
 A ideia é acompanhar a evolução do projeto e do aprendizado de **Flutter e Dart** ao longo das aulas.
+
+A cada nova aula, novas anotações e funcionalidades poderão ser adicionadas ao projeto.
