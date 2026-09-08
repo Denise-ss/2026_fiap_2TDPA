@@ -2,7 +2,7 @@
 
 Repositório destinado à organização dos **estudos, exercícios e projetos desenvolvidos durante o 2º ano de Análise e Desenvolvimento de Sistemas na FIAP**.
 
-> Os conteúdos detalhados, códigos e anotações de aula estão organizados dentro de cada projeto.
+> Os conteúdos detalhados, códigos e anotações estão organizados dentro de cada projeto.
 
 ---
 
@@ -15,16 +15,37 @@ Estudos e exercícios utilizando **SQL e PL/SQL**.
 **Conteúdos praticados:**
 
 - Criação e manipulação de tabelas
+- `SELECT`
 - `INSERT`, `UPDATE` e `DELETE`
+- `COMMIT`
 - Blocos PL/SQL
-- Variáveis
-- Estruturas condicionais
+- Variáveis e tipos de dados
+- Entrada de valores com `&`
+- `DBMS_OUTPUT.PUT_LINE`
+- Estruturas condicionais `IF`, `ELSIF` e `ELSE`
+- `SELECT INTO`
 - `FOR LOOP`
 - `WHILE LOOP`
 - `LOOP` e `EXIT WHEN`
-- `DBMS_OUTPUT`
+- Função `MOD`
 
-📂 `DATABASE/`
+📂 Estudos e exercícios:
+
+```text
+DATABASE/
+│
+├── aula07082026/
+├── aula21082026/
+├── aula28082026/
+│
+└── CP1_DATABASE/
+    ├── EXERCICIO1_REAJUSTE_SALARIAL.SQL
+    ├── EXERCICIO2_IMC.SQL
+    ├── EXERCICIO3_ALUNO.SQL
+    ├── EXERCICIO4_FIBONACCI.SQL
+    ├── EXERCICIO5_PARES_IMPARES.SQL
+    └── README.md
+```
 
 ---
 
@@ -69,6 +90,7 @@ Desenvolvimento de aplicações utilizando **Dart e Flutter**.
 ```text
 mobile/
 └── projeto_cont_fiap/
+    └── README.md
 ```
 
 ---
@@ -79,7 +101,9 @@ mobile/
 2026_fiap_2TDPA/
 │
 ├── DATABASE/
-│   └── Estudos e exercícios de Banco de Dados
+│   ├── Aulas e exercícios
+│   └── CP1_DATABASE/
+│       └── README.md
 │
 ├── mobile/
 │   └── projeto_cont_fiap/
@@ -94,10 +118,10 @@ mobile/
 
 Este repositório será atualizado ao longo do ano conforme novos conteúdos, tecnologias e projetos forem desenvolvidos.
 
-Cada projeto terá seu próprio `README.md` com:
+Cada projeto poderá ter seu próprio `README.md` com:
 
-- 📌 Objetivo do projeto
+- 📌 Objetivo
 - 📚 Conteúdos aprendidos
 - 💻 Códigos e exemplos
 - 🛠️ Tecnologias utilizadas
-- 📝 Anotações de aula
+- 📝 Anotações e explicações
