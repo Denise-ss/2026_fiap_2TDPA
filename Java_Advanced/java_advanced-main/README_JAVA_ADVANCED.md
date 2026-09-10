@@ -524,7 +524,6 @@ O código atual possui duas formas de realizar a consulta:
 - QueryDSL;
 - Criteria API.
 
-> Neste material elas ficam registradas porque já existem nos arquivos da aula. Se ainda não foram detalhadas pelo professor, não é necessário decorar o funcionamento interno agora.
 
 ---
 
@@ -751,11 +750,6 @@ O `partialUpdate` primeiro procura o usuário pelo ID. Se encontrar, verifica os
                  UserRepository
 ```
 
-## 🧠 Frase para memorizar
-
-> **Entity representa os dados → Repository fornece acesso aos dados → Service organiza as operações do sistema.**
-
----
 
 ## 📌 Status da matéria — 10/09/2026
 
