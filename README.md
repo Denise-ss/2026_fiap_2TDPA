@@ -95,6 +95,120 @@ mobile/
 
 ---
 
+
+### ☕ Java Advanced — Spring Boot
+
+Desenvolvimento de um **backend para um blog utilizando Java, Spring Boot, JPA e Lombok**.
+
+O projeto está sendo construído em camadas, separando a representação dos dados, o acesso ao banco e as operações do sistema.
+
+**Conteúdos praticados:**
+
+**Entities e JPA**
+
+- `@Entity` e `@Table`
+- `@Id` e `@GeneratedValue`
+- Identificadores com `UUID`
+- `@Column`
+- Validações com `@NotBlank`, `@NotNull` e `@Size`
+- Lombok: `@Getter`, `@Setter`, `@NoArgsConstructor`, `@AllArgsConstructor` e `@Builder`
+- Métodos `equals()`, `hashCode()` e `toString()`
+
+**Relacionamentos**
+
+- `@OneToOne` — um para um
+- `@OneToMany` — um para muitos
+- `@ManyToOne` — muitos para um
+- `@ManyToMany` — muitos para muitos
+- `@JoinColumn`
+- `@JoinTable`
+- `mappedBy`
+- `CascadeType`
+- `FetchType.LAZY` e `FetchType.EAGER`
+
+**Entidades criadas**
+
+- `User`
+- `Profile`
+- `Post`
+- `Tag`
+- `Role`
+- `Order`
+- `OrderItem`
+- `OrderKey`
+- `OrderItemKey`
+
+**Repositories**
+
+Foram criados os repositórios responsáveis pelo acesso aos dados:
+
+- `UserRepository`
+- `ProfileRepository`
+- `PostRepository`
+- `RoleRepository`
+- `TagRepository`
+- `OrderRepository`
+- `OrderItemRepository`
+- `OrderRepositoryCustom`
+- `OrderRepositoryCustomImpl`
+
+Os repositórios utilizam principalmente:
+
+```java
+JpaRepository<Entidade, TipoDaChave>
+```
+
+Exemplo:
+
+```java
+public interface UserRepository extends JpaRepository<User, UUID> {
+}
+```
+
+**Service — conteúdo atual**
+
+A camada de Service começou a ser desenvolvida com:
+
+- `UserService`
+- `UserServiceImpl`
+
+Operações presentes no código:
+
+- `findAll()` — buscar todos os usuários
+- `findById()` — buscar usuário pelo ID
+- `persist()` — salvar um usuário
+- `delete()` — excluir um usuário
+- `deleteById()` — excluir pelo ID
+- `existsById()` — verificar se o usuário existe
+- `partialUpdate()` — atualizar parcialmente um usuário
+- Paginação com `Page` e `Pageable`
+
+Fluxo principal estudado:
+
+```text
+ENTITY
+Representa os dados
+     ↓
+REPOSITORY
+Acessa os dados
+     ↓
+SERVICE
+Organiza as operações do sistema
+```
+
+📂 Projeto e material de revisão:
+
+```text
+Java_Advanced/
+└── java_advanced-main/
+    ├── blogBackend/
+    └── README_JAVA_ADVANCED.md
+```
+
+> O `README_JAVA_ADVANCED.md` contém as explicações detalhadas e a tabela de comandos/anotações utilizadas no projeto.
+
+---
+
 ## 🗂️ Organização
 
 ```text
@@ -108,6 +222,11 @@ mobile/
 ├── mobile/
 │   └── projeto_cont_fiap/
 │       └── README.md
+│
+├── Java_Advanced/
+│   └── java_advanced-main/
+│       ├── blogBackend/
+│       └── README_JAVA_ADVANCED.md
 │
 └── README.md
 ```
